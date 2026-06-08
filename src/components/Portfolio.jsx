@@ -1,6 +1,3 @@
 export default function Portfolio({items}){
- return <div>
- <h2>Portfolio</h2>
- {['MF','US'].map(t=><div key={t}><h3>{t}</h3>{items.filter(x=>x.type===t).map(x=><p key={x.name}>{x.name} - ₹{x.amount} (Debit {x.date})</p>)}</div>)}
- </div>
+return <section><h2>PORTFOLIO</h2>{items.map(x=><div className='asset' key={x.name}><div><h3>{x.name}</h3><small>{x.type} • Debit {x.date}th • SIP ACTIVE</small><div className='bar'></div></div><h2>₹{(x.amount/1000).toFixed(1)}K</h2></div>)}</section>
 }
